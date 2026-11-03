@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rodotest Tacógrafos Auto Elétrica em Salto SP. Tacógrafos, auto elétrica, manutenção, calibração e serviços para caminhões e vans.">
+<title>Rodotest | Tacógrafos e Auto Elétrica</title>
+<style>
+:root{--blue:#102e6d;--red:#c71935;--yellow:#ffdf00;--light:#f4f6fa;--ink:#202b40}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6}
+header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:4px solid var(--red);box-shadow:0 2px 12px #0002}
+.nav{max-width:1200px;margin:auto;padding:13px 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:27px;line-height:1.05;font-weight:900;color:var(--blue);text-decoration:none}
+.logo span{display:block;color:var(--red);font-size:16px}.logo small{display:block;font-size:10px;letter-spacing:1px}
+nav{display:flex;align-items:center;gap:22px}
+nav a{color:var(--blue);font-weight:800;font-size:13px;text-decoration:none}
+nav a:hover{color:var(--red)}
+.menu-btn{display:none;border:0;background:none;color:var(--blue);font-size:29px;cursor:pointer}
+
+/* Faixa animada: caminhão desenhado em CSS, sem imagens externas */
+.truck-road{height:142px;position:relative;overflow:hidden;background:linear-gradient(180deg,#eaf1fb,#f9fbff);border-bottom:5px solid var(--blue)}
+.road-mark{position:absolute;left:0;right:0;bottom:20px;border-bottom:3px dashed #aab8ce}
+.animated-truck{position:absolute;left:-340px;bottom:20px;width:300px;height:105px;animation:drive-across 11s linear infinite;z-index:2}
+.trailer{position:absolute;left:4px;bottom:25px;width:194px;height:66px;background:#fff;border:3px solid var(--blue);border-radius:5px 3px 3px 5px;box-shadow:inset 0 -8px var(--red);display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:900;font-size:22px;letter-spacing:.5px}
+.trailer:after{content:"TACÓGRAFOS • AUTO ELÉTRICA";position:absolute;top:8px;left:0;right:0;text-align:center;font-size:8px;color:var(--red);letter-spacing:.6px}
+.cab{position:absolute;left:198px;bottom:25px;width:91px;height:59px;background:var(--red);border:3px solid #991329;border-radius:7px 15px 3px 3px;clip-path:polygon(0 0,65% 0,100% 48%,100% 100%,0 100%)}
+.window{position:absolute;top:7px;right:9px;width:39px;height:23px;background:#bfe7ff;border:2px solid #fff;border-radius:4px;transform:skew(12deg)}
+.bumper{position:absolute;left:278px;bottom:23px;width:19px;height:7px;background:#555;border-radius:2px}
+.wheel{position:absolute;bottom:5px;width:37px;height:37px;border-radius:50%;background:#171717;border:5px solid #737b87;box-shadow:inset 0 0 0 3px #252525;animation:wheel-spin .55s linear infinite}
+.wheel:before,.wheel:after{content:"";position:absolute;background:#dce3ed;left:11px;top:3px;width:4px;height:18px;border-radius:2px}
+.wheel:after{transform:rotate(90deg)}
+.wheel-a{left:35px}.wheel-b{left:224px}
+@keyframes drive-across{from{transform:translateX(0)}to{transform:translateX(calc(100vw + 680px))}}
+@keyframes wheel-spin{to{transform:rotate(360deg)}}
+
+section{scroll-margin-top:82px}
+.hero{position:relative;min-height:510px;display:flex;align-items:center;padding:85px 7%;color:white;background:linear-gradient(100deg,#091b3bf2,#102e6dcc),url('https://images.unsplash.com/photo-1519003722824-194d4455a60f?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:760px}
+.tag,.subtitle{font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-size:13px}
+.hero .tag{color:var(--yellow)}
+h1{font-size:clamp(36px,6vw,60px);line-height:1.12;margin:15px 0}
+.hero p{font-size:18px;max-width:650px;margin-bottom:24px}
+.btn{display:inline-block;padding:13px 22px;border-radius:7px;text-decoration:none;font-weight:800;margin:5px 7px 5px 0}
+.btn-red{background:var(--red);color:white}.btn-white{background:white;color:var(--blue)}
+.container{max-width:1150px;margin:auto;padding:72px 6%}
+.center{text-align:center}
+h2{font-size:clamp(28px,4vw,36px);color:var(--blue);margin:8px 0 18px}
+.intro{max-width:720px;margin:0 auto 35px;color:#647084}
+.about,.services-section,.contact-section{background:var(--light)}
+.about-grid,.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about-box,.contact-card{background:white;padding:29px;border-radius:12px;border-left:5px solid var(--red);box-shadow:0 5px 20px #102e6d0d}
+.about-box h3,.contact-card h3{color:var(--blue);font-size:22px;margin-bottom:10px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+.service{padding:25px;background:white;border-radius:10px;border-bottom:4px solid var(--red);box-shadow:0 5px 22px #102e6d12;transition:transform .2s}
+.service:hover{transform:translateY(-5px)}
+.symbol{font-size:34px}.service h3{color:var(--blue);margin:8px 0}.service p{font-size:14px;color:#687386}
+.highlight{background:var(--blue);color:white;padding:55px 6%;text-align:center;border-top:5px solid var(--yellow)}
+.highlight h2{color:white}.highlight p{max-width:750px;margin:10px auto 20px}
+.contact-card a{color:var(--red);font-weight:bold;text-decoration:none}
+.map{width:100%;height:330px;border:0;border-radius:12px}
+.contact-box{background:var(--blue);color:white;padding:42px;border-radius:15px;text-align:center}
+.contact-box h2{color:white}.contact-box p{margin:10px 0 20px}
+footer{background:#0b1b3b;color:white;text-align:center;padding:30px 15px}
+footer strong{color:var(--yellow)}
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:1100;background:#20bd62;color:white;text-decoration:none;padding:13px 19px;border-radius:50px;font-weight:bold;box-shadow:0 5px 20px #0003}
+@media(max-width:800px){
+.menu-btn{display:block}
+nav{display:none;position:absolute;top:68px;left:0;width:100%;background:white;flex-direction:column;padding:20px;gap:17px;box-shadow:0 8px 15px #0002}
+nav.open{display:flex}
+.about-grid,.location-grid{grid-template-columns:1fr}
+.services{grid-template-columns:repeat(2,1fr)}
+.hero{min-height:480px}
+}
+@media(max-width:500px){
+.services{grid-template-columns:1fr}
+.truck-road{height:125px}
+.animated-truck{transform-origin:left bottom;scale:.83;bottom:15px}
+.contact-box{padding:28px 16px}
+.whatsapp{right:12px;bottom:12px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.animated-truck,.wheel{animation:none}
+.animated-truck{left:calc(50% - 150px)}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <a href="#inicio" class="logo">RODOTEST<span>TACÓGRAFOS</span><small>AUTO ELÉTRICA</small></a>
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <nav id="nav">
+   <a href="#inicio">INÍCIO</a><a href="#sobre">QUEM SOMOS</a><a href="#servicos">SERVIÇOS</a><a href="#endereco">ENDEREÇO</a><a href="#contato">CONTATO</a>
+  </nav>
+ </div>
+</header>
+
+<div class="truck-road" aria-label="Caminhão animado da Rodotest">
+ <div class="road-mark"></div>
+ <div class="animated-truck">
+  <div class="trailer">RODOTEST</div>
+  <div class="cab"><div class="window"></div></div>
+  <div class="bumper"></div>
+  <div class="wheel wheel-a"></div><div class="wheel wheel-b"></div>
+ </div>
+</div>
+
+<section class="hero" id="inicio">
+ <div class="hero-content">
+  <div class="tag">RODOTEST • SALTO – SP</div>
+  <h1>Precisão, confiança e qualidade para sua estrada.</h1>
+  <p>Especialistas em tacógrafos e auto elétrica. Soluções para caminhões e vans com profissionalismo e dedicação.</p>
+  <a class="btn btn-red" href="https://wa.me/5511942605501" target="_blank" rel="noopener">FALE PELO WHATSAPP</a>
+  <a class="btn btn-white" href="#servicos">CONHEÇA OS SERVIÇOS</a>
+ </div>
+</section>
+
+<section class="about" id="sobre"><div class="container">
+ <div class="about-grid">
+  <div><div class="subtitle">Conheça a empresa</div><h2>Quem somos</h2>
+   <p>A Rodotest Tacógrafos Auto Elétrica é especializada em serviços voltados ao setor automotivo, com foco em tacógrafos e sistemas elétricos de veículos.</p><br>
+   <p>Nosso objetivo é oferecer atendimento de qualidade, soluções confiáveis e serviços realizados com atenção aos detalhes.</p>
+  </div>
+  <div class="about-box"><h3>Nosso compromisso</h3><p>Trabalhar com responsabilidade, dedicação e precisão, buscando atender às necessidades de cada cliente.</p><br><strong style="color:#c71935">RODOTEST — Sua confiança é nossa prioridade.</strong></div>
+ </div>
+</div></section>
+
+<section class="services-section" id="servicos"><div class="container">
+ <div class="center"><div class="subtitle">O que fazemos</div><h2>Nossos serviços</h2><p class="intro">Conheça as soluções oferecidas pela Rodotest para caminhões, vans e veículos.</p></div>
+ <div class="services">
+  <article class="service"><div class="symbol">⏱️</div><h3>Tacógrafos</h3><p>Serviços especializados em equipamentos de registro e controle de velocidade e tempo.</p></article>
+  <article class="service"><div class="symbol">⚡</div><h3>Auto elétrica</h3><p>Serviços relacionados aos sistemas elétricos automotivos.</p></article>
+  <article class="service"><div class="symbol">🔧</div><h3>Manutenção</h3><p>Cuidados técnicos e manutenção de equipamentos.</p></article>
+  <article class="service"><div class="symbol">🎯</div><h3>Calibração</h3><p>Serviços de calibração de tacógrafos.</p></article>
+  <article class="service"><div class="symbol">⚙️</div><h3>Instalação</h3><p>Instalação de equipamentos e componentes relacionados aos serviços oferecidos.</p></article>
+  <article class="service"><div class="symbol">📋</div><h3>Aferição INMETRO</h3><p>Atendimento relacionado à aferição de tacógrafos conforme os procedimentos aplicáveis.</p></article>
+ </div>
+</div></section>
+
+<section class="highlight"><div class="subtitle" style="color:#ffdf00">Atendimento especializado</div><h2>Seu veículo merece atenção especializada.</h2><p>Entre em contato com a Rodotest e consulte nossos serviços para caminhões e vans.</p><a class="btn btn-red" href="https://wa.me/5511942605501" target="_blank" rel="noopener">SOLICITAR ATENDIMENTO</a></section>
+
+<section id="endereco"><div class="container">
+ <div class="center"><div class="subtitle">Onde estamos</div><h2>Nosso endereço</h2><p class="intro">Estamos localizados na cidade de Salto, interior de São Paulo.</p></div>
+ <div class="location-grid">
+  <div class="contact-card"><h3>📍 Endereço</h3><p>R. das Nações Unidas, 1152</p><p>Olaria – Salto / SP</p><p>CEP: 13329-350</p><br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rua+das+Nacoes+Unidas+1152+Olaria+Salto+SP">COMO CHEGAR →</a></div>
+  <iframe class="map" loading="lazy" title="Mapa da Rodotest em Salto SP" src="https://maps.google.com/maps?q=Rua%20das%20Nacoes%20Unidas%201152%20Olaria%20Salto%20SP&z=15&output=embed"></iframe>
+ </div>
+</div></section>
+
+<section class="contact-section" id="contato"><div class="container">
+ <div class="contact-box"><div class="subtitle" style="color:#ffdf00">Entre em contato</div><h2>Fale com a Rodotest</h2><p>Precisa de informações ou deseja consultar nossos serviços? Estamos à disposição.</p>
+  <h3 style="font-size:27px">☎ (11) 94260-5501</h3><br>
+  <a class="btn btn-red" href="https://wa.me/5511942605501" target="_blank" rel="noopener">CHAMAR NO WHATSAPP</a>
+  <a class="btn btn-white" href="tel:+5511942605501">LIGAR AGORA</a>
+ </div>
+</div></section>
+
+<footer><h3>RODOTEST <strong>TACÓGRAFOS</strong></h3><p>AUTO ELÉTRICA</p><p>Salto – São Paulo</p><p>(11) 94260-5501</p><br><small>© 2026 Rodotest. Todos os direitos reservados.</small></footer>
+<a class="whatsapp" href="https://wa.me/5511942605501" target="_blank" rel="noopener">☏ WhatsApp</a>
+
+<script>
+function toggleMenu(){
+ const nav=document.getElementById('nav');
+ const btn=document.querySelector('.menu-btn');
+ nav.classList.toggle('open');
+ btn.setAttribute('aria-expanded',nav.classList.contains('open')?'true':'false');
+}
+document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',()=>{
+ document.getElementById('nav').classList.remove('open');
+ document.querySelector('.menu-btn').setAttribute('aria-expanded','false');
+}));
+</script>
+</body>
+</html>
